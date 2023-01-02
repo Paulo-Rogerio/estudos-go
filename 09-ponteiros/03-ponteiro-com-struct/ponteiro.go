@@ -2,7 +2,7 @@ package main
 
 import "fmt"
 
-// Declaro minha Struct ( Metodo )
+// Declaro minha Struct ( Metodo ), que defini um atributo ( name )
 type Carro struct {
 	name string
 }
@@ -33,20 +33,25 @@ type Carro struct {
 // Endereço de memoria: 0xc000096210
 // Picanto
 
-func (c *Carro) andou() {
+// Declaro um method ( andou() ), em uma func que ( instancia / vincula / faz bind ) da Struct Carro em c
+func (c Carro) andou() {
 
 	// O valor da variável name ( Picanto ) só vale dentro desse escopo.
+	// Acessa o atributo name e defini um valor
 	c.name = "Picanto"
 	fmt.Println(c.name)
-	fmt.Println("Endereço de memoria:", &c.name)
-
+	fmt.Println("Endereço de memoria de c.name:", &c.name)
+	fmt.Println("-------------")
 }
 
 func main() {
+	//Definindo atributo name para Ka
 	carro := Carro{
 		name: "ka",
 	}
 
 	carro.andou()
+	fmt.Println("Endereço de memoria de carro: ", &carro.name)
 	fmt.Println(carro.name)
+
 }
