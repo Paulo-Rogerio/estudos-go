@@ -1,0 +1,13 @@
+id: 1
+sector: 3
+nome: "Paulo"
+tasks: 
+- feature/task2
+- feature/task3
+daily:
+- 6
+- 10
+languages:
+  Ruby: 2.7
+  C: 8.0
+  Go: 1.18

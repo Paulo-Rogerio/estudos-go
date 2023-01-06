@@ -1,0 +1,14 @@
+id: 3333877
+int: 3
+salary: 9000
+tasks:
+- feature/task1
+- feature/task2
+dailyHours:
+- 1
+- 2
+- 3
+- 4
+languages:
+  Bash: 4.1
+  Golang: 1.19
