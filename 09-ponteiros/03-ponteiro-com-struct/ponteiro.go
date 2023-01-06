@@ -4,7 +4,7 @@ import "fmt"
 
 // Declaro minha Struct ( Metodo ), que defini um atributo ( name )
 type Carro struct {
-	name string
+	Name string
 }
 
 // Ao declarar minha função assim: func (c Carro) andou()
@@ -38,20 +38,20 @@ func (c Carro) andou() {
 
 	// O valor da variável name ( Picanto ) só vale dentro desse escopo.
 	// Acessa o atributo name e defini um valor
-	c.name = "Picanto"
-	fmt.Println(c.name)
-	fmt.Println("Endereço de memoria de c.name:", &c.name)
+	c.Name = "Picanto"
+	fmt.Println(c.Name)
+	fmt.Println("Endereço de memoria de c.name:", &c.Name)
 	fmt.Println("-------------")
 }
 
 func main() {
 	//Definindo atributo name para Ka
 	carro := Carro{
-		name: "ka",
+		Name: "ka",
 	}
 
 	carro.andou()
-	fmt.Println("Endereço de memoria de carro: ", &carro.name)
-	fmt.Println(carro.name)
+	fmt.Println("Endereço de memoria de carro: ", &carro.Name)
+	fmt.Println(carro.Name)
 
 }
