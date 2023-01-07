@@ -12,9 +12,9 @@ import (
 )
 
 type Monitor struct {
-	Id         string `json:id yaml:"id"`
-	Monitor_Id string `json:monitor_id yaml:"monitor_id"`
-	Name       string `json:name yaml:"name"`
+	Id         string `json:"id" yaml:"id"`
+	Monitor_Id string `json:"monitor_id" yaml:"monitor_id"`
+	Name       string `json:"name" yaml:"name"`
 }
 
 func main() {
