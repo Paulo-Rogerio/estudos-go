@@ -5,19 +5,34 @@ import (
 	"encoding/json"
 	"fmt"
 	"io/ioutil"
+	"log"
 	"net/http"
+
+	"gopkg.in/yaml.v2"
 )
 
 type Monitor struct {
-	Id         string `json:id`
-	Monitor_Id string `json:monitor_id`
-	Name       string `json:name`
+	Id         string `json:id yaml:"id"`
+	Monitor_Id string `json:monitor_id yaml:"monitor_id"`
+	Name       string `json:name yaml:"name"`
 }
 
 func main() {
 
+	// Extract Yaml
+	f := &Monitor{}
+	source, err := ioutil.ReadFile("manifesto-gerado-meeseeks.yaml")
+	if err != nil {
+		log.Println(err)
+	}
+
+	err = yaml.Unmarshal([]byte(source), &f)
+	if err != nil {
+		log.Println("error: %v", err)
+	}
+
 	// post
-	jsonData := map[string]string{"monitor_id": "3", "name": "teste-1"}
+	jsonData := map[string]string{"monitor_id": f.Monitor_Id, "name": f.Name}
 	jsonValue, _ := json.Marshal(jsonData)
 	resp, err := http.Post("http://localhost:3000/api/monitors", "application/json", bytes.NewBuffer(jsonValue))
 	if err != nil {
