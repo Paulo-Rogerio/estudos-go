@@ -13,10 +13,16 @@ import (
 
 // Monitor Struct
 type Monitor struct {
-	Id         string `json:id`
-	Monitor_Id string `json:monitor_id`
-	Profile    string `json:profile`
+	Id          string `json:id`
+	Template_Id string `json:template_id`
+	Profile     string `json:profile`
 }
+
+// type Template struct {
+// 	Id         string `json:id`
+// 	Monitor_Id string `json:monitor_id`
+// 	Profile    string `json:profile`
+// }
 
 // Init Monitors ( Dados Mock )
 var monitors []Monitor
@@ -57,7 +63,7 @@ func main() {
 	r := mux.NewRouter()
 
 	// Mock Data
-	monitors = append(monitors, Monitor{Id: "1", Monitor_Id: "10", Profile: "monitor-teste-123"})
+	monitors = append(monitors, Monitor{Id: "1", Template_Id: "10", Profile: "monitor-teste-123"})
 
 	// Router Handlers / Endpoints
 	r.HandleFunc("/api/monitors", getMonitors).Methods("GET")

@@ -1,0 +1,1 @@
+go mod init cliente-http-read-yaml
